@@ -1,7 +1,7 @@
 import faker from 'faker';
 import vest from '../..';
 
-import context from '../../core/context';
+import context from 'ctx';
 
 import { ERROR_HOOK_CALLED_OUTSIDE } from '../constants';
 import { ERROR_OUTSIDE_OF_TEST } from './constants';

@@ -1,4 +1,10 @@
 const skipWords = require('./config/eslint/spellCheckerSkip');
+const moduleAliases = require('./util/moduleAliases');
+
+const aliases = moduleAliases.absolute.reduce(
+  (aliases, [name]) => aliases.concat(name),
+  []
+);
 
 module.exports = {
   env: {
@@ -36,6 +42,7 @@ module.exports = {
   rules: {
     'import/newline-after-import': 2,
     'import/no-self-import': 2,
+    'import/no-unresolved': [2, { ignore: aliases }],
     'import/no-useless-path-segments': 2,
     'import/order': [
       'error',
@@ -65,7 +72,6 @@ module.exports = {
     'no-var': 2,
     'no-warning-comments': 2,
     'object-shorthand': [2, 'always', { avoidQuotes: true }],
-    'prefer-arrow-callback': 2,
     'prefer-const': 2,
     'sort-keys': [
       1,

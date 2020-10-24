@@ -1,4 +1,5 @@
-import { isRule, proxySupported } from '../lib';
+import isRule from 'isRule';
+import proxySupported from 'proxySupported';
 import rules from '../rules';
 import runner from './runner';
 

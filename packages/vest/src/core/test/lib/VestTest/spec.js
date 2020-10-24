@@ -1,4 +1,4 @@
-import VestTest from '.';
+import VestTest from 'VestTest';
 
 const fieldName = 'unicycle';
 const statement = 'I am Root.';
@@ -42,7 +42,7 @@ describe('VestTest', () => {
     beforeEach(() => {
       jest.resetModules();
 
-      const VestTest = require('.');
+      const VestTest = require('VestTest');
       testObject = new VestTest({
         fieldName,
         statement,

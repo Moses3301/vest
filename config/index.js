@@ -1,6 +1,6 @@
 const { readdirSync } = require('fs');
 const path = require('path');
-const { PACKAGES_DIR } = require('../shared/constants.js');
+const { PACKAGES_DIR } = require('../shared/constants');
 
 const ROOT_PATH = path.resolve(__dirname, '..');
 const CONFIG_PATH = path.resolve(ROOT_PATH, 'config');

@@ -1,4 +1,4 @@
-import { transformResult } from '../../lib/transformResult';
+import { transformResult } from 'transformResult';
 
 /**
  * Run a single rule against ensured value (e.g. `isNumber()`)

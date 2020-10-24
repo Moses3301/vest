@@ -1,15 +1,19 @@
 {
   "license": "MIT",
-  "dependencies": {},
+  "dependencies": {
+    "faker": "^5.1.0"
+  },
   "scripts": {
     "build": "node ./scripts/buildAll",
     "prettier-watch": "onchange '**/*.js' '**/*.json' -- prettier --write {{changed}}",
+    "dev": "onchange '**/*.js' -- yarn genJSConfig",
+    "genJSConfig": "node ./scripts/buildJsconfig",
     "test": "jest --projects ./packages/*/",
     "lint": "eslint . --ignore-path .gitignore"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "pretty-quick --staged"
+      "pre-commit": "yarn genJSConfig && pretty-quick"
     }
   },
   "prettier": {
@@ -33,6 +37,7 @@
     "@babel/preset-env": "^7.12.1",
     "@babel/register": "^7.12.1",
     "@lets/wait": "^2.0.2",
+    "@rollup/plugin-alias": "^3.1.1",
     "@rollup/plugin-babel": "^5.2.1",
     "@rollup/plugin-commonjs": "^15.1.0",
     "@rollup/plugin-node-resolve": "^9.0.0",
@@ -47,7 +52,6 @@
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-jest": "^23.20.0",
     "eslint-plugin-spellcheck": "^0.0.17",
-    "faker": "^5.1.0",
     "fs-extra": "^9.0.1",
     "husky": "^4.3.0",
     "jest": "^26.6.0",

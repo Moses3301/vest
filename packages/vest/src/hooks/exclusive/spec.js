@@ -1,13 +1,13 @@
+import VestTest from 'VestTest';
+import context from 'ctx';
+import group from 'group';
 import vest from '../..';
 import mock from '../../../../../shared/testUtils/mock';
 import testDummy from '../../../testUtils/testDummy';
-import context from '../../core/context';
-import VestTest from '../../core/test/lib/VestTest';
-import group from '../group';
 
+const { isExcluded, isGroupExcluded } = require('exclusive');
 const faker = require('faker');
 const { ERROR_HOOK_CALLED_OUTSIDE } = require('../constants');
-const { isExcluded, isGroupExcluded } = require('.');
 
 let res, res1;
 
@@ -230,7 +230,7 @@ describe('exclusive hooks', () => {
 
     beforeEach(() => {
       mockThrowError = mock('throwError');
-      hooks = require('.');
+      hooks = require('exclusive');
     });
 
     describe.each([['only', 'skip']])('%s', hook => {

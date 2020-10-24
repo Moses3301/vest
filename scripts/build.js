@@ -9,6 +9,8 @@ const buildOne = packageName => {
 };
 
 const build = packageName => {
+  require('./buildJsconfig');
+
   if (packageName) {
     buildOne(packageName);
   } else {
